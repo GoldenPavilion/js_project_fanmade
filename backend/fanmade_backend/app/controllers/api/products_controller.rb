@@ -7,7 +7,7 @@ class Api::ProductsController < ApplicationController
     def create
         product = Product.new(product_params)
         if product.save
-            render json: product
+            render json: ProductSerializer.new(product)
         else
             render json: {errors: product.errors.full_messages}
         end
@@ -15,7 +15,7 @@ class Api::ProductsController < ApplicationController
 
     def show
         product = Product.find_by(id: params[:id])
-        render json: product
+        render json: ProductSerializer.new(product)
     end
 
     private

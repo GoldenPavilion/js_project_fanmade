@@ -8,7 +8,7 @@ class Api::CategoriesController < ApplicationController
     def create
         category = Category.new(category_params)
         if category.save
-            render json: category
+            render json: CategorySerializer.new(product)
         else
             render json: {errors: category.errors.full_messages}
         end
@@ -16,7 +16,7 @@ class Api::CategoriesController < ApplicationController
 
     def show
         category = Category.find_by(id: params[:id])
-        render json: category
+        render json: CategorySerializer.new(category)
     end
 
     private
