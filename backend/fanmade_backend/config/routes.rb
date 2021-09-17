@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :products, only: [:index, :create, :show]
-    resources :categories, only: [:index]
+    resources :categories, only: [:index, :create, :show]
   end
 end
