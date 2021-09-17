@@ -25,7 +25,7 @@ Product.create(name: "Terry Funk X SPLX",
                price: 26.99,
                description: "An orange and black t-shirt celebrating wrestling legend Terry Funk.",
                link: "https://suplexapparel.com/collections/t-shirts/products/official-terry-funk-x-splx-t-shirt-red",
-               category_id: 0
+               category_id: 1
 )
 
 Product.create(name: "FMW Vintage Baseball Hat",
@@ -34,7 +34,7 @@ Product.create(name: "FMW Vintage Baseball Hat",
                price: 23.99,
                description: "A black hat with the classic FMW logo on the front.",
                link: "https://suplexapparel.com/collections/summer-21/products/official-fmw-vintage-dad-hat",
-               category_id: 3
+               category_id: 4
 )
 
 Product.create(name: "Amazing Ninja Dude - Michaelangelo",
@@ -43,7 +43,7 @@ Product.create(name: "Amazing Ninja Dude - Michaelangelo",
                price: 42.00,
                description: "A black pullover hoodie featuring a comic image of Michaelangelo from the Ninja Turtles.",
                link: "https://teefury.com/products/sweatshirt-unisex-pullover-amazing-ninja-dude",
-               category_id: 1
+               category_id: 2
 )
 
 Product.create(name: "Monster Terror - Frankenstein",
@@ -52,7 +52,7 @@ Product.create(name: "Monster Terror - Frankenstein",
                price: 38.00,
                description: "A canvas print of Frankenstein's monster. Green on a black background with scenes from the movie depicted in the face.",
                link: "https://teefury.com/products/canvas-stretched-monster-terror",
-               category_id: 4
+               category_id: 5
 )
 
 Product.create(name: "Metal Dice",
@@ -61,7 +61,7 @@ Product.create(name: "Metal Dice",
                price: 24.99,
                description: "Metal dice available in a multitude of designs and colors with a distinctly steampunk feel.",
                link: "https://www.etsy.com/listing/864177770/metal-dice-dnd-dice-set-rpg-d20?ref=shop_home_feat_1&pro=1",
-               category_id: 6
+               category_id: 7
 )
 
 Product.create(name: "Mos Eisley Cantina - Women's Tee",
@@ -70,5 +70,5 @@ Product.create(name: "Mos Eisley Cantina - Women's Tee",
                price: 30,
                description: "A light green shirt with characters from the Mos Eisley Cantina depicted, as well as retro looking yellow text.",
                link: "https://heroesvillains.com/collections/star-wars-classics/products/stw-publication-art-mg-womens-ss",
-               category_id: 0
+               category_id: 1
 )
