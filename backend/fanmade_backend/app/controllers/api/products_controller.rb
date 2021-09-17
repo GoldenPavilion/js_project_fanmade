@@ -13,6 +13,11 @@ class Api::ProductsController < ApplicationController
         end
     end
 
+    def show
+        product = Product.find_by(id: params[:id])
+        render json: product
+    end
+
     private
 
     def product_params
