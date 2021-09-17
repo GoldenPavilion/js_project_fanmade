@@ -6,6 +6,11 @@ class Api::ProductsController < ApplicationController
 
     def create
         product = Product.new(product_params)
+        if product.save
+            render json: product
+        else
+            render json: {errors: product.errors.full_messages}
+        end
     end
 
     private
