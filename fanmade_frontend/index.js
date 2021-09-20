@@ -40,6 +40,25 @@ function handleForm(e) {
     postProduct(inputName, inputCompany, inputFandom, inputPrice, inputDesc, inputLink, inputCategory);
 }
 
-function postProduct(){
+function postProduct(name, company, fandom, price, desc, link, category){
+    // console.log(name, company, fandom, price, desc, link, category)
+    let productData = {name, company, fandom, price, desc, link, category}
 
+    fetch(endPoint, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            name: name, 
+            company: company, 
+            fandom: fandom, 
+            price: price, 
+            description: desc,
+            link: link,
+            category_id: category     
+        })
+    })
+    .then(response => response.json)
+    .then(product => {
+        console.log(product);
+    })
 }
