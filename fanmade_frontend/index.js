@@ -13,9 +13,8 @@ function fetchProducts() {
             const productMarkup = `
                 <div data-id= ${product.id}>
                     <a href=${product.attributes.link}><h3>${product.attributes.name} (${product.attributes.category.name})</h3></a>
-                    <h6>${product.attributes.company}</h6>
-                    <h6>${product.attributes.fandom}</h6>
                     <h4>${product.attributes.price}</h4>
+                    <h6>${product.attributes.company} - ${product.attributes.fandom}</h6>
                     <p>${product.attributes.description}</p>
                 </div><br><br>
             `;
