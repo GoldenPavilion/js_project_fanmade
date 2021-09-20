@@ -8,6 +8,10 @@ function fetchProducts() {
     fetch(endPoint)
     .then(response => response.json())
     .then(products => {
-        console.log(products);
+        products.data.forEach(product => {
+            const productMarkup = `
+            <h3>${product.attributes.name}</h3>
+            `;
+        })
     })
 }
