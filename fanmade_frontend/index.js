@@ -29,5 +29,17 @@ function fetchProducts() {
 
 function handleForm(e) {
     e.preventDefault();
-    console.log(e);
+    const inputName = document.querySelector("#product-name").value;
+    const inputCompany = document.querySelector("#product-company").value;
+    const inputFandom = document.querySelector("#product-fandom").value;
+    const inputPrice = document.querySelector("#product-price").value;
+    const inputDesc = document.querySelector("#product-description").value;
+    const inputLink = document.querySelector("#product-link").value;
+    const inputCategory = parseInt(document.querySelector("#categories").value)
+
+    postProduct(inputName, inputCompany, inputFandom, inputPrice, inputDesc, inputLink, inputCategory);
+}
+
+function postProduct(){
+
 }
