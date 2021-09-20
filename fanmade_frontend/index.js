@@ -9,9 +9,18 @@ function fetchProducts() {
     .then(response => response.json())
     .then(products => {
         products.data.forEach(product => {
+            console.log(product.attributes.name);
             const productMarkup = `
-            <h3>${product.attributes.name}</h3>
+                <div data-id= ${product.id}>
+                    <a href=${product.attributes.link}><h3>${product.attributes.name} (${product.attributes.category.name})</h3></a>
+                    <h6>${product.attributes.company}</h6>
+                    <h6>${product.attributes.fandom}</h6>
+                    <h4>${product.attributes.price}</h4>
+                    <p>${product.attributes.description}</p>
+                </div><br><br>
             `;
+
+            document.querySelector('#product-container').innerHTML += productMarkup;
         })
     })
 }
