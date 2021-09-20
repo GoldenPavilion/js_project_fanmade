@@ -2,6 +2,10 @@ const endPoint = "http://localhost:3000/api/products"
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
+
+    const buildProductForm = document.querySelector("#new-product-form");
+
+    buildProductForm.addEventListener("submit", (e) => handleForm(e));
 })
 
 function fetchProducts() {
@@ -9,7 +13,6 @@ function fetchProducts() {
     .then(response => response.json())
     .then(products => {
         products.data.forEach(product => {
-            console.log(product.attributes.name);
             const productMarkup = `
                 <div data-id= ${product.id}>
                     <a href=${product.attributes.link}><h3>${product.attributes.name} (${product.attributes.category.name})</h3></a>
@@ -22,4 +25,9 @@ function fetchProducts() {
             document.querySelector('#product-container').innerHTML += productMarkup;
         })
     })
+}
+
+function handleForm(e) {
+    e.preventDefault();
+    console.log(e);
 }
