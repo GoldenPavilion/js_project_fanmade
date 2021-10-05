@@ -55,6 +55,17 @@ function postProduct(name, company, fandom, price, desc, link, category){
     })
     .then(response => response.json())
     .then(product => {
-        console.log(product);
+        // console.log(product);
+        const productData = product.data.attributes;
+        const productMarkup = `
+                <div data-id= ${productData.id}>
+                    <a href=${productData.link}><h3>${productData.name} (${productData.category.name})</h3></a>
+                    <h4>${productData.price}</h4>
+                    <h6>${productData.company} - ${productData.fandom}</h6>
+                    <p>${productData.description}</p>
+                </div><br><br>
+        `;
+
+        document.querySelector('#product-container').innerHTML += productMarkup;
     })
 }
