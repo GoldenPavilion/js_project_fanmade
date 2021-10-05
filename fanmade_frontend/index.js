@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
 
     const buildProductForm = document.querySelector("#new-product-form");
-
     buildProductForm.addEventListener("submit", (e) => handleForm(e));
 })
 
@@ -36,13 +35,10 @@ function handleForm(e) {
     const inputDesc = document.querySelector("#product-description").value;
     const inputLink = document.querySelector("#product-link").value;
     const inputCategory = parseInt(document.querySelector("#categories").value)
-
     postProduct(inputName, inputCompany, inputFandom, inputPrice, inputDesc, inputLink, inputCategory);
 }
 
 function postProduct(name, company, fandom, price, desc, link, category){
-    // console.log(name, company, fandom, price, desc, link, category)
-    let productData = {name, company, fandom, price, desc, link, category}
 
     fetch(endPoint, {
         method: "POST",
@@ -57,7 +53,7 @@ function postProduct(name, company, fandom, price, desc, link, category){
             category_id: category     
         })
     })
-    .then(response => response.json)
+    .then(response => response.json())
     .then(product => {
         console.log(product);
     })
