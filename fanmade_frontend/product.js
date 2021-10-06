@@ -8,5 +8,8 @@ class Product {
         this.description = productAttrs.description;
         this.link = productAttrs.link;
         this.category_id = productAttrs.category_id;
+        Product.all.push(this);
     }
 }
+
+Product.all = []
