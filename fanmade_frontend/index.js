@@ -8,10 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function renderProduct(product) {
-    
     const productMarkup = `
         <div data-id= ${product.id}>
-            <a href=${product.link}><h3>${product.name} (${product.category})</h3></a>
+            <a href=${product.link}><h3>${product.name} (${product.category.name})</h3></a>
             <h4>${product.price}</h4>
             <h6>${product.company} - ${product.fandom}</h6>
             <p>${product.description}</p>
