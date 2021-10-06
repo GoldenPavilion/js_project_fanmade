@@ -1,11 +1,12 @@
 class Product {
-    constructor(name, company, fandom, price, description, link, category_id){
-        this.name = name;
-        this.company = company;
-        this.fandom = fandom;
-        this.price = price;
-        this.description = description;
-        this.link = link;
-        this.category_id = category_id;
+    constructor(product, productAttrs){
+        this.id = product.id;
+        this.name = productAttrs.name;
+        this.company = productAttrs.company;
+        this.fandom = productAttrs.fandom;
+        this.price = productAttrs.price;
+        this.description = productAttrs.description;
+        this.link = productAttrs.link;
+        this.category_id = productAttrs.category_id;
     }
 }
