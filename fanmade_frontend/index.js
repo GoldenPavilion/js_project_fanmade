@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function renderProduct(product) {
     const productMarkup = `
         <div data-id= ${product.id}>
-            <a href=${product.attributes.link}><h3>${product.attributes.name} (${product.attributes.category.name})</h3></a>
-            <h4>${product.attributes.price}</h4>
-            <h6>${product.attributes.company} - ${product.attributes.fandom}</h6>
-            <p>${product.attributes.description}</p>
+            <a href=${product.link}><h3>${product.name} (${product.category.name})</h3></a>
+            <h4>${product.price}</h4>
+            <h6>${product.company} - ${product.fandom}</h6>
+            <p>${product.description}</p>
         </div><br><br>
     `;
 
@@ -25,10 +25,8 @@ function fetchProducts() {
     .then(response => response.json())
     .then(products => {
         products.data.forEach(product => {
-
             let newProduct = new Product(product, product.attributes);
-
-            renderProduct(product);
+            renderProduct(newProduct);
         })
     })
 }
