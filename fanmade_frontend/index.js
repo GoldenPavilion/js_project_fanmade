@@ -25,6 +25,9 @@ function fetchProducts() {
     .then(response => response.json())
     .then(products => {
         products.data.forEach(product => {
+
+            let newProduct = new Product(product, product.attributes);
+
             renderProduct(product);
         })
     })
