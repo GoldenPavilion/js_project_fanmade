@@ -1,5 +1,6 @@
 class Product {
     constructor(product, productAttrs){
+        debugger
         this.id = product.id;
         this.name = productAttrs.name;
         this.company = productAttrs.company;
@@ -7,7 +8,7 @@ class Product {
         this.price = productAttrs.price;
         this.description = productAttrs.description;
         this.link = productAttrs.link;
-        this.category_id = productAttrs.category_id;
+        this.category = productAttrs.category
         Product.all.push(this);
     }
 }
