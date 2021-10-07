@@ -27,11 +27,12 @@ function handleForm(e) {
     const inputPrice = document.querySelector("#product-price").value;
     const inputDesc = document.querySelector("#product-description").value;
     const inputLink = document.querySelector("#product-link").value;
+    const inputImg = document.querySelector("#product-img").value;
     const inputCategory = parseInt(document.querySelector("#categories").value)
-    postProduct(inputName, inputCompany, inputFandom, inputPrice, inputDesc, inputLink, inputCategory);
+    postProduct(inputName, inputCompany, inputFandom, inputPrice, inputDesc, inputLink, inputImg, inputCategory);
 }
 
-function postProduct(name, company, fandom, price, desc, link, category){
+function postProduct(name, company, fandom, price, desc, link, img, category){
 
     fetch(endPoint, {
         method: "POST",
@@ -43,6 +44,7 @@ function postProduct(name, company, fandom, price, desc, link, category){
             price: price, 
             description: desc,
             link: link,
+            img: img,
             category_id: category     
         })
     })
