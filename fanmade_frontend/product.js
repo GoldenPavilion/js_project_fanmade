@@ -11,16 +11,15 @@ class Product {
         Product.all.push(this);
     }
 
-    function renderProduct(product) {
-        const productMarkup = `
-            <div data-id= ${product.id}>
-                <a href=${product.link}><h3>${product.name} (${product.category.name})</h3></a>
-                <h4>${product.price}</h4>
-                <h6>${product.company} - ${product.fandom}</h6>
-                <p>${product.description}</p>
+    renderProduct() {
+        return `
+            <div data-id= ${this.id}>
+                <a href=${this.link}><h3>${this.name} (${this.category.name})</h3></a>
+                <h4>${this.price}</h4>
+                <h6>${this.company} - ${this.fandom}</h6>
+                <p>${this.description}</p>
             </div><br><br>
         `;
-        document.querySelector('#product-container').innerHTML += productMarkup;
     }
 }
 
