@@ -59,8 +59,7 @@ function postProduct(name, company, fandom, price, desc, link, category){
     })
     .then(response => response.json())
     .then(productResp => {
-        console.log(productResp);
-        const product = productResp.data;
+        const product = productResp.data.attributes;
         renderProduct(product);
     })
 }
