@@ -25,7 +25,8 @@ function fetchProducts() {
     .then(products => {
         products.data.forEach(product => {
             let newProduct = new Product(product, product.attributes);
-            renderProduct(newProduct);
+            
+            document.querySelector('#product-container').innerHTML += newProduct.renderProduct();
         })
     })
 }
