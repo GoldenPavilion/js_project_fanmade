@@ -7,25 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     buildProductForm.addEventListener("submit", (e) => handleForm(e));
 })
 
-function renderProduct(product) {
-    const productMarkup = `
-        <div data-id= ${product.id}>
-            <a href=${product.attributes.link}><h3>${product.attributes.name} (${product.attributes.category.name})</h3></a>
-            <h4>${product.attributes.price}</h4>
-            <h6>${product.attributes.company} - ${product.attributes.fandom}</h6>
-            <p>${product.attributes.description}</p>
-        </div><br><br>
-    `;
-
-    document.querySelector('#product-container').innerHTML += productMarkup;
-}
-
 function fetchProducts() {
     fetch(endPoint)
     .then(response => response.json())
     .then(products => {
         products.data.forEach(product => {
-            renderProduct(product);
+            let newProduct = new Product(product, product.attributes);
+            
+            document.querySelector('#product-container').innerHTML += newProduct.renderProduct();
         })
     })
 }
@@ -59,8 +48,9 @@ function postProduct(name, company, fandom, price, desc, link, category){
     })
     .then(response => response.json())
     .then(productResp => {
-        console.log(productResp);
         const product = productResp.data;
-        renderProduct(product);
+        let newProduct = new Product(product, product.attributes);
+        document.querySelector('#product-container').innerHTML += newProduct.renderProduct();
     })
 }
+
