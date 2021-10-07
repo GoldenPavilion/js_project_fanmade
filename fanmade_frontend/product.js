@@ -7,6 +7,7 @@ class Product {
         this.price = productAttrs.price;
         this.description = productAttrs.description;
         this.link = productAttrs.link;
+        this.img = productAttrs.img;
         this.category = productAttrs.category
         Product.all.push(this);
     }
@@ -15,6 +16,7 @@ class Product {
         return `
             <div data-id= ${this.id}>
                 <a href=${this.link}><h3>${this.name} (${this.category.name})</h3></a>
+                <img src=${this.img} width="400" height="400">
                 <h4>${this.price}</h4>
                 <h6>${this.company} - ${this.fandom}</h6>
                 <p>${this.description}</p>
