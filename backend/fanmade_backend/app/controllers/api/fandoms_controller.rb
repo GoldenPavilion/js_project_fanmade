@@ -10,9 +10,4 @@ class Api::FandomsController < ApplicationController
         render json: FandomSerializer.new(fandom)
     end
 
-    private
-
-    def fandom_params
-    end
-
 end
