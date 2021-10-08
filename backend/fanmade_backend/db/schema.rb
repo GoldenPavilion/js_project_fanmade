@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_08_002703) do
+ActiveRecord::Schema.define(version: 2021_10_08_203908) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2021_10_08_002703) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "company"
-    t.string "fandom"
     t.decimal "price"
     t.string "description"
     t.string "link"
@@ -35,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_10_08_002703) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "img"
+    t.integer "fandom_id"
   end
 
 end
