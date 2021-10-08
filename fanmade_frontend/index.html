@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>FanMade</title>
+        <link rel="stylesheet" href="stylesheet.scss">
         <script type="text/javascript" src="product.js"></script>
         <script type="text/javascript" src="index.js"></script>
     </head>
@@ -12,7 +13,25 @@
             <form id="new-product-form">
                 <input id="product-name" type="text" name="name" value="" placeholder="Product Name"><br>
                 <input id="product-company" type="text" name="company" value="" placeholder="Company/Manufacturer"><br>
-                <input id="product-fandom" type="text" name="fandom" value="" placeholder="Fandom/IP"><br>
+                <p>Select A Fandom:
+                <select id="product-fandoms" name="fandoms">
+                    <option value="1">Star Wars</option>
+                    <option value="2">Star Trek</option>
+                    <option value="3">Lord of the Rings</option>
+                    <option value="4">Harry Potter</option>
+                    <option value="5">Marvel</option>
+                    <option value="6">DC</option>
+                    <option value="7">Disney</option>
+                    <option value="8">Theme Parks</option>
+                    <option value="9">Dungeons and Dragons</option>
+                    <option value="10">Pro Wrestling</option>
+                    <option value="11">Pokemon</option>
+                    <option value="12">Movies (General)</option>
+                    <option value="13">Video Games (General)</option>
+                    <option value="14">Tabletop Games (General)</option>
+                    <option value="15">Music (General)</option>
+                    <option value="16">Books (General)</option>
+                </select></p>
                 <input id="product-price" type="number" step=".01" name="price" value="" placeholder="Price"><br>
                 <textarea id="product-description" type="text" name="description" value="" placeholder="Description"></textarea><br>
                 <input id="product-link" type="text" name="link" value="" placeholder="Link To Product"><br>

@@ -18,7 +18,7 @@ class Product {
                 <a href=${this.link}><h3>${this.name} (${this.category.name})</h3></a>
                 <img src=${this.img} width="400" height="400">
                 <h4>${this.price}</h4>
-                <h6>${this.company} - ${this.fandom}</h6>
+                <h6>${this.company} - ${this.fandom.name}</h6>
                 <p>${this.description}</p>
             </div><br><br>
         `;

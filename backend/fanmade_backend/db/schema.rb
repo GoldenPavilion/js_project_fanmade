@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_07_222956) do
+ActiveRecord::Schema.define(version: 2021_10_08_203908) do
 
   create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "fandoms", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -21,7 +27,6 @@ ActiveRecord::Schema.define(version: 2021_10_07_222956) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "company"
-    t.string "fandom"
     t.decimal "price"
     t.string "description"
     t.string "link"
@@ -29,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_10_07_222956) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "img"
+    t.integer "fandom_id"
   end
 
 end
