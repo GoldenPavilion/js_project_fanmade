@@ -39,7 +39,7 @@ function postProduct(name, company, fandom, price, desc, link, img, category){
         body: JSON.stringify({
             name: name, 
             company: company, 
-            fandom: fandom, 
+            fandom_id: fandom, 
             price: price, 
             description: desc,
             link: link,
@@ -49,7 +49,6 @@ function postProduct(name, company, fandom, price, desc, link, img, category){
     })
     .then(response => response.json())
     .then(productResp => {
-        debugger
         const product = productResp.data;
         let newProduct = new Product(product, product.attributes);
         document.querySelector('#product-container').innerHTML += newProduct.renderProduct();
