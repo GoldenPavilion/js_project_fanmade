@@ -1,6 +1,8 @@
-class Api::CategoriesController < ApplicationController
+class Api::FandomsController < ApplicationController
    
     def index
+        fandoms = Fandom.all
+        render json: FandomSerializer.new(fandoms)
     end
 
     def show
