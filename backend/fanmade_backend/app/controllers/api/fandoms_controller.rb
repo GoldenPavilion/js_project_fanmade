@@ -6,6 +6,8 @@ class Api::FandomsController < ApplicationController
     end
 
     def show
+        fandom = Fandom.find_by(id: params[:id])
+        render json: FandomSerializer.new(fandom)
     end
 
     private
