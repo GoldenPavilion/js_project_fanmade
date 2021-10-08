@@ -23,12 +23,12 @@ function handleForm(e) {
     e.preventDefault();
     const inputName = document.querySelector("#product-name").value;
     const inputCompany = document.querySelector("#product-company").value;
-    const inputFandom = document.querySelector("#product-fandom").value;
+    const inputFandom = parseInt(document.querySelector("#product-fandoms").value);
     const inputPrice = document.querySelector("#product-price").value;
     const inputDesc = document.querySelector("#product-description").value;
     const inputLink = document.querySelector("#product-link").value;
     const inputImg = document.querySelector("#product-img").value;
-    const inputCategory = parseInt(document.querySelector("#categories").value)
+    const inputCategory = parseInt(document.querySelector("#categories").value);
     postProduct(inputName, inputCompany, inputFandom, inputPrice, inputDesc, inputLink, inputImg, inputCategory);
 }
 
