@@ -17,6 +17,25 @@ Category.create(name: "Crafts")
 Category.create(name: "Dice")
 Category.create(name: "Gaming Accessories")
 
+# FANDOMS
+
+Fandom.create(name: "Star Wars")
+Fandom.create(name: "Star Trek")
+Fandom.create(name: "Lord of the Rings")
+Fandom.create(name: "Harry Potter")
+Fandom.create(name: "Marvel")
+Fandom.create(name: "DC")
+Fandom.create(name: "Disney")
+Fandom.create(name: "Theme Parks")
+Fandom.create(name: "Dungeons and Dragons")
+Fandom.create(name: "Pro-Wrestling")
+Fandom.create(name: "Pokemon")
+Fandom.create(name: "Movies (General)")
+Fandom.create(name: "Video Games (General)")
+Fandom.create(name: "Tabletop Games (General)")
+Fandom.create(name: "Music (General)")
+Fandom.create(name: "Books (General)")
+
 # PRODUCTS
 
 Product.create(name: "Terry Funk X SPLX",
@@ -78,3 +97,4 @@ Product.create(name: "Mos Eisley Cantina - Women's Tee",
                img: "https://cdn.shopify.com/s/files/1/0017/3113/3555/products/TS9IPLSTW_1_800x.png?v=1611723045",
                category_id: 1
 )
+
