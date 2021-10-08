@@ -12,9 +12,7 @@ function fetchProducts() {
     .then(response => response.json())
     .then(products => {
         products.data.forEach(product => {
-            debugger
             let newProduct = new Product(product, product.attributes);
-            
             document.querySelector('#product-container').innerHTML += newProduct.renderProduct();
         })
     })
