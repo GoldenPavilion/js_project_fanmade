@@ -49,9 +49,9 @@ function postProduct(name, company, fandom, price, desc, link, img, category){
     })
     .then(response => response.json())
     .then(productResp => {
+        debugger
         const product = productResp.data;
         let newProduct = new Product(product, product.attributes);
-        debugger
         document.querySelector('#product-container').innerHTML += newProduct.renderProduct();
     })
 }
