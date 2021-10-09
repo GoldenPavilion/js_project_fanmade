@@ -16,7 +16,7 @@ class Product {
         return `
             <div class="card" data-id= ${this.id}>
                 <a href=${this.link}><h3>${this.name} (${this.category.name})</h3></a>
-                <img src=${this.img} width="400" height="400">
+                <img src=${this.img} width="250" height="250">
                 <h4>${this.price}</h4>
                 <p>${this.company} - ${this.fandom.name}</p>
                 <p>${this.description}</p>
