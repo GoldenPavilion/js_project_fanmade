@@ -1,3 +1,22 @@
 body {
     background-color: #72C1F2
 }
+
+h3 {
+    color: white
+}
+
+h4 { 
+    color: #053959
+}
+
+p {
+    color: #27538C
+}
+
+.site-header {
+    background-color: #085A8C;
+    text-align: center;
+    padding: 20px;  
+    color: white
+}
