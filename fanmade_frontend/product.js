@@ -14,7 +14,7 @@ class Product {
 
     renderProduct() {
         return `
-            <div data-id= ${this.id}>
+            <div class="card" data-id= ${this.id}>
                 <a href=${this.link}><h3>${this.name} (${this.category.name})</h3></a>
                 <img src=${this.img} width="400" height="400">
                 <h4>${this.price}</h4>
