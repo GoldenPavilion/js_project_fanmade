@@ -2,10 +2,6 @@ body {
     background-color: #72C1F2
 }
 
-h3 {
-    color: white
-}
-
 h4 { 
     color: #053959
 }
@@ -20,6 +16,46 @@ p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 20px;  
     color: white;
+}
+
+.form-title {
+    font-family: arial;
+    color: white;
+}
+
+input[type=text] {
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+input[type=number] {
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 100px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    resize: none;
+}
+
+select {
+    padding: 6px 10px;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #148DD9;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 .card {
