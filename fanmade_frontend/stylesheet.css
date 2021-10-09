@@ -17,8 +17,9 @@ p {
 .site-header {
     background-color: #085A8C;
     text-align: center;
+    font-family: arial;
     padding: 20px;  
-    color: white
+    color: white;
 }
 
 .card {
