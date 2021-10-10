@@ -77,6 +77,14 @@ input[type=button], input[type=submit], input[type=reset] {
     font-size: 22px;
 }
 
+.card-title {
+    color: white;
+}
+
+.card-title:hover {
+    color: #AEDFF2
+}
+
 a:link {
     text-decoration: none;
 }
