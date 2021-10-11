@@ -92,7 +92,7 @@ a:link {
 
 .form-modal-content {
     width: 250px;
-    height: 500px;
+    height: 550px;
     background-color: #AEDFF2;
     border-radius: 4px;
     text-align: center;
@@ -118,11 +118,14 @@ input[type=text] {
     border: 1px solid black;
     border-radius: 4px;
     padding: 4px;
+    margin: 4px auto;
 }
 
 input[type=number] {
     border: 1px solid black;
     border-radius: 4px;
+    padding: 4px;
+    margin: 4px auto;
 }
 
 textarea {
