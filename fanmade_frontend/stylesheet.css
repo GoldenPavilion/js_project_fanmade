@@ -79,13 +79,13 @@ input[type=button], input[type=submit], input[type=reset] {
     cursor: pointer;
 }
 
- #product-container {
+/* #product-container {
     margin: 0 auto;
     max-width: 1000px;
     display: grid;
     grid-template-columns: repeat(3, fr);
     gap: 20px;
-} 
+} */
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
