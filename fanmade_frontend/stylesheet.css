@@ -18,6 +18,21 @@ p {
     color: white;
 }
 
+.topnav {
+    overflow: hidden;
+    background-color: #5096F2;
+    font-family: arial;
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
 .form-container {
     background-color: #AEDFF2;
     width: 250px;
@@ -63,6 +78,14 @@ input[type=button], input[type=submit], input[type=reset] {
     margin: 4px 2px;
     cursor: pointer;
 }
+
+ #product-container {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3, fr);
+    gap: 20px;
+} 
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
