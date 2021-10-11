@@ -4,9 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
 
     const findProductButton = document.querySelector("#add-product-button")
+    const findCloseButton = document.querySelector(".close");
+    const formModal = document.querySelector(".form-modal");
     const buildProductForm = document.querySelector("#new-product-form");
     findProductButton.addEventListener('click', function(){
-        console.log('Clicked!');
+        formModal.style.display = 'flex';
+    })
+    findCloseButton.addEventListener('click', function(){
+        formModal.style.display = 'none';
     })
     buildProductForm.addEventListener("submit", (e) => handleForm(e));
 })
