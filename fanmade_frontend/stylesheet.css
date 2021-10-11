@@ -88,6 +88,7 @@ a:link {
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none; 
 }
 
 .form-modal-content {

@@ -3,7 +3,11 @@ const endPoint = "http://localhost:3000/api/products"
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
 
+    const findProductButton = document.querySelector("#add-product-button")
     const buildProductForm = document.querySelector("#new-product-form");
+    findProductButton.addEventListener('click', function(){
+        console.log('Clicked!');
+    })
     buildProductForm.addEventListener("submit", (e) => handleForm(e));
 })
 
