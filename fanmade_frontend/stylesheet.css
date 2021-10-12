@@ -57,7 +57,7 @@ p {
     margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.topnav a:hover, .dropdown:hover .dropbtn {
     background-color: #085A8C;
 }
 

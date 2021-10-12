@@ -1,7 +1,10 @@
 const endPoint = "http://localhost:3000/api/products"
+const fandomsEndPoint = "http://localhost:3000/api/fandoms"
+const catsEndPoint = "http://localhost:3000/api/categories"
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
+    fetchCategories();
 
     const findProductButton = document.querySelector("#add-product-button")
     const findCloseButton = document.querySelector(".close");
@@ -26,6 +29,18 @@ function fetchProducts() {
         products.data.forEach(product => {
             let newProduct = new Product(product, product.attributes);
             document.querySelector('.pc-row').innerHTML += newProduct.renderProduct();
+        })
+    })
+}
+
+function fetchCategories() {
+    fetch(catsEndPoint)
+    .then(response => response.json())
+    .then(categories => {
+        categories.data.forEach(category => {
+            console.log(category)
+            let newCategory = `<a href="#">${category.attributes.name}</a>`;
+            document.querySelector(".dropdown-content").innerHTML += newCategory;        
         })
     })
 }
