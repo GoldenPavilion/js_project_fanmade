@@ -7,12 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const findCloseButton = document.querySelector(".close");
     const formModal = document.querySelector(".form-modal");
     const buildProductForm = document.querySelector("#new-product-form");
+
     findProductButton.addEventListener('click', function(){
         formModal.style.display = 'flex';
     })
+    
     findCloseButton.addEventListener('click', function(){
         formModal.style.display = 'none';
     })
+    
     buildProductForm.addEventListener("submit", (e) => handleForm(e));
 })
 
@@ -22,7 +25,7 @@ function fetchProducts() {
     .then(products => {
         products.data.forEach(product => {
             let newProduct = new Product(product, product.attributes);
-            document.querySelector('#product-container').innerHTML += newProduct.renderProduct();
+            document.querySelector('.pc-row').innerHTML += newProduct.renderProduct();
         })
     })
 }
@@ -60,7 +63,7 @@ function postProduct(name, company, fandom, price, desc, link, img, category){
     .then(productResp => {
         const product = productResp.data;
         let newProduct = new Product(product, product.attributes);
-        document.querySelector('#product-container').innerHTML += newProduct.renderProduct();
+        document.querySelector('.pc-row').innerHTML += newProduct.renderProduct();
     })
 }
 

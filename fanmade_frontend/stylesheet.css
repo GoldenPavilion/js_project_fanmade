@@ -43,16 +43,30 @@ p {
 /* PRODUCT CARD LAYOUT */
 
 #product-container {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+    width: 1100px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.pc-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+    justify-content: space-between;
 }
 
 /* INDIVIDUAL PRODUCT CARD STYLING */
 
 .card {
+    flex: 1 1 21rem;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: normal;
+    flex-direction: column;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
-    margin: auto;
+    margin: 10px 15px;
     text-align: center;
     font-family: arial;
 }
