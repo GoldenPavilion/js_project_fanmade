@@ -5,6 +5,7 @@ const catsEndPoint = "http://localhost:3000/api/categories"
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
     fetchCategories();
+    fetchFandoms();
 
     const findProductButton = document.querySelector("#add-product-button")
     const findCloseButton = document.querySelector(".close");
@@ -38,9 +39,18 @@ function fetchCategories() {
     .then(response => response.json())
     .then(categories => {
         categories.data.forEach(category => {
-            console.log(category)
             let newCategory = `<a href="#">${category.attributes.name}</a>`;
             document.querySelector(".dropdown-content").innerHTML += newCategory;        
+        })
+    })
+}
+
+function fetchFandoms() {
+    fetch(fandomsEndPoint)
+    .then(response => response.json())
+    .then(fandoms => {
+        fandoms.data.forEach(fandom => {
+            console.log(fandom)
         })
     })
 }
