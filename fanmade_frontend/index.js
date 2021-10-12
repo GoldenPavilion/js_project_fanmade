@@ -40,7 +40,7 @@ function fetchCategories() {
     .then(categories => {
         categories.data.forEach(category => {
             let newCategory = `<a href="#">${category.attributes.name}</a>`;
-            document.querySelector(".dropdown-content").innerHTML += newCategory;        
+            document.querySelector(".cat-dropdown-content").innerHTML += newCategory;        
         })
     })
 }
@@ -50,7 +50,8 @@ function fetchFandoms() {
     .then(response => response.json())
     .then(fandoms => {
         fandoms.data.forEach(fandom => {
-            console.log(fandom)
+            let newFandom = `<a href="#">${fandom.attributes.name}</a>`;
+            document.querySelector(".fan-dropdown-content").innerHTML += newFandom;
         })
     })
 }
