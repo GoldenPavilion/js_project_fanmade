@@ -42,13 +42,10 @@ p {
 
 /* PRODUCT CARD LAYOUT */
 
-/* #product-container {
-    margin: 0 auto;
-    max-width: 1000px;
+#product-container {
     display: grid;
-    grid-template-columns: repeat(3, fr);
-    gap: 20px;
-} */
+    grid-template-columns: 33% 33% 33%;
+}
 
 /* INDIVIDUAL PRODUCT CARD STYLING */
 
@@ -77,7 +74,7 @@ a:link {
     text-decoration: none;
 }
 
-/* MODAL STYLING */
+/* FORM MODAL STYLING */
 
 .form-modal {
     width: 100%;

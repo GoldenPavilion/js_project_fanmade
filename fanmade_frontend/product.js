@@ -20,7 +20,7 @@ class Product {
                 <h4 class="price">$${this.price}</h4>
                 <p>${this.company} - ${this.fandom.name}</p>
                 <p>${this.description}</p>
-            </div><br><br>
+            </div>
         `;
     }
 }
