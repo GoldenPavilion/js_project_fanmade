@@ -33,13 +33,17 @@ function filterCategories(){
             let linkValue = linkHTML.getAttribute('value');
             let products = Product.all;
             let filteredProducts = [];
+            let cards = document.querySelectorAll(".card")
 
             for (let i = 0; i < products.length; i++) {
                 if (products[i].category.name === linkValue) {
                     filteredProducts.push(products[i])
                 }
             }
-            console.log(filteredProducts)
+            
+            cards.forEach(card => {
+                card.remove();
+            })
 
             filteredProducts.forEach(product => {
                 document.querySelector('.pc-row').innerHTML += product.renderProduct();
