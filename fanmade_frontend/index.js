@@ -42,6 +42,10 @@ function filterCategories(){
                 }
             }
             console.log(filteredProducts)
+
+            filteredProducts.forEach(product => {
+                document.querySelector('.pc-row').innerHTML += product.renderProduct();
+            })
         })
     })
 }
