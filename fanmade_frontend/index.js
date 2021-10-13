@@ -1,6 +1,4 @@
 const endPoint = "http://localhost:3000/api/products"
-const fandomsEndPoint = "http://localhost:3000/api/fandoms"
-const catsEndPoint = "http://localhost:3000/api/categories"
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
@@ -11,6 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const findCloseButton = document.querySelector(".close");
     const formModal = document.querySelector(".form-modal");
     const buildProductForm = document.querySelector("#new-product-form");
+    const viewAllButton = document.querySelector("#view-all-button");
+
+    viewAllButton.addEventListener('click', function(){
+        let cards = document.querySelectorAll(".card")
+        cards.forEach(card => {
+            card.remove();
+        })
+        fetchProducts();
+    })
 
     findProductButton.addEventListener('click', function(){
         formModal.style.display = 'flex';
@@ -128,4 +135,3 @@ function postProduct(name, company, fandom, price, desc, link, img, category){
         document.querySelector('.pc-row').innerHTML += newProduct.renderProduct();
     })
 }
-
