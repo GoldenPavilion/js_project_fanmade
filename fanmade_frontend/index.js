@@ -62,7 +62,10 @@ function filterFandoms(){
                     filteredProducts.push(products[i])
                 }
             }
-            console.log(filteredProducts)
+
+            filteredProducts.forEach(product => {
+                document.querySelector('.pc-row').innerHTML += product.renderProduct();
+            })
         })
     })
 }
