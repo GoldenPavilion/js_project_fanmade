@@ -29,9 +29,21 @@ function filterCategories(){
     
     menuLinks.forEach(link => {
         link.addEventListener('click', function(){
-            let linkID = link.id
-            let aLink = document.querySelector(`#${linkID}`)
-            debugger
+            let linkID = link.id;
+            let linkHTML = document.querySelector(`#${linkID}`);
+            let linkValue = linkHTML.getAttribute('value');
+            let products = Product.all;
+            let filteredProducts = [];
+
+            for (let i = 0; i < products.length; i++) {
+                if (products[i].category.name === linkValue) {
+                    filteredProducts.push(products[i])
+                }
+            }
+            
+            console.log(linkValue)
+            
+            
         })
     })
 }
