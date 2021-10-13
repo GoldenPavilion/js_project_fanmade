@@ -2,6 +2,8 @@ const endPoint = "http://localhost:3000/api/products"
 const fandomsEndPoint = "http://localhost:3000/api/fandoms"
 const catsEndPoint = "http://localhost:3000/api/categories"
 
+const menuLinks = document.querySelectorAll(".menuLink")
+
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
     fetchCategories();
@@ -39,7 +41,7 @@ function fetchCategories() {
     .then(response => response.json())
     .then(categories => {
         categories.data.forEach(category => {
-            let newCategory = `<a href="#">${category.attributes.name}</a>`;
+            let newCategory = `<a href="#" class="menuLink" id=${category.id} value="${category.attributes.name}">${category.attributes.name}</a>`;
             document.querySelector(".cat-dropdown-content").innerHTML += newCategory;        
         })
     })
@@ -50,7 +52,7 @@ function fetchFandoms() {
     .then(response => response.json())
     .then(fandoms => {
         fandoms.data.forEach(fandom => {
-            let newFandom = `<a href="#">${fandom.attributes.name}</a>`;
+            let newFandom = `<a href="#" value="${fandom.attributes.name}">${fandom.attributes.name}</a>`;
             document.querySelector(".fan-dropdown-content").innerHTML += newFandom;
         })
     })
