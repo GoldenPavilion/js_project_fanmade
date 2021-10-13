@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
     //fetchCategories();
     //fetchFandoms();
+    filterCategories();
 
     const findProductButton = document.querySelector("#add-product-button")
     const findCloseButton = document.querySelector(".close");
@@ -23,14 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
     buildProductForm.addEventListener("submit", (e) => handleForm(e));
 })
 
-//function filterCategories(){
-  //  const menuLinks = document.querySelectorAll(".menuLink");
-    // menuLinks.forEach(link => {
-       // link.addEventListener('click', function(){
-         //   console.log("Clicked!")
-        // })
-    // })
-// }
+function filterCategories(){
+    const menuLinks = document.querySelectorAll(".menuLink");
+    
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(){
+            let linkID = link.id
+            let aLink = document.querySelector(`#${linkID}`)
+            debugger
+        })
+    })
+}
 
 function fetchProducts() {
     fetch(endPoint)
