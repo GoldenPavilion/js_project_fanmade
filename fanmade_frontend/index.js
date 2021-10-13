@@ -4,8 +4,6 @@ const catsEndPoint = "http://localhost:3000/api/categories"
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
-    //fetchCategories();
-    //fetchFandoms();
     filterCategories();
     filterFandoms();
 
@@ -84,28 +82,6 @@ function fetchProducts() {
         })
     })
 }
-
-// function fetchCategories() {
-//    fetch(catsEndPoint)
-//    .then(response => response.json())
-//    .then(categories => {
-//        categories.data.forEach(category => {
-//            let newCategory = `<a href="#" class="menuLink" id=${category.id} value="${category.attributes.name}">${category.attributes.name}</a>`;
-//            document.querySelector(".cat-dropdown-content").innerHTML += newCategory;        
-//        })
-//    })
-// }
-
-// function fetchFandoms() {
-//    fetch(fandomsEndPoint)
-//    .then(response => response.json())
-//    .then(fandoms => {
-//        fandoms.data.forEach(fandom => {
-//            let newFandom = `<a href="#" value="${fandom.attributes.name}">${fandom.attributes.name}</a>`;
-//            document.querySelector(".fan-dropdown-content").innerHTML += newFandom;
-//        })
-//    })
-//}
 
 function handleForm(e) {
     e.preventDefault();
