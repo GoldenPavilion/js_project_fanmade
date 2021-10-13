@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function filterCategories(){
-    const menuLinks = document.querySelectorAll(".menuLink");
+    const catLinks = document.querySelectorAll(".catLink");
     
-    menuLinks.forEach(link => {
+    catLinks.forEach(link => {
         link.addEventListener('click', function(){
             let linkID = link.id;
             let linkHTML = document.querySelector(`#${linkID}`);
@@ -40,10 +40,7 @@ function filterCategories(){
                     filteredProducts.push(products[i])
                 }
             }
-            
-            console.log(linkValue)
-            
-            
+            console.log(filteredProducts)
         })
     })
 }
