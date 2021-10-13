@@ -1,16 +1,23 @@
 const endPoint = "http://localhost:3000/api/products"
-const fandomsEndPoint = "http://localhost:3000/api/fandoms"
-const catsEndPoint = "http://localhost:3000/api/categories"
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
-    fetchCategories();
-    fetchFandoms();
+    filterCategories();
+    filterFandoms();
 
     const findProductButton = document.querySelector("#add-product-button")
     const findCloseButton = document.querySelector(".close");
     const formModal = document.querySelector(".form-modal");
     const buildProductForm = document.querySelector("#new-product-form");
+    const viewAllButton = document.querySelector("#view-all-button");
+
+    viewAllButton.addEventListener('click', function(){
+        let cards = document.querySelectorAll(".card")
+        cards.forEach(card => {
+            card.remove();
+        })
+        fetchProducts();
+    })
 
     findProductButton.addEventListener('click', function(){
         formModal.style.display = 'flex';
@@ -23,6 +30,64 @@ document.addEventListener('DOMContentLoaded', () => {
     buildProductForm.addEventListener("submit", (e) => handleForm(e));
 })
 
+function filterCategories(){
+    const catLinks = document.querySelectorAll(".catLink");
+    
+    catLinks.forEach(link => {
+        link.addEventListener('click', function(){
+            let linkID = link.id;
+            let linkHTML = document.querySelector(`#${linkID}`);
+            let linkValue = linkHTML.getAttribute('value');
+            let products = Product.all;
+            let filteredProducts = [];
+            let cards = document.querySelectorAll(".card")
+
+            for (let i = 0; i < products.length; i++) {
+                if (products[i].category.name === linkValue) {
+                    filteredProducts.push(products[i])
+                }
+            }
+            
+            cards.forEach(card => {
+                card.remove();
+            })
+
+            filteredProducts.forEach(product => {
+                document.querySelector('.pc-row').innerHTML += product.renderProduct();
+            })
+        })
+    })
+}
+
+function filterFandoms(){
+    const fanLinks = document.querySelectorAll(".fanLink");
+    
+    fanLinks.forEach(link => {
+        link.addEventListener('click', function(){
+            let linkID = link.id;
+            let linkHTML = document.querySelector(`#${linkID}`);
+            let linkValue = linkHTML.getAttribute('value');
+            let products = Product.all;
+            let filteredProducts = [];
+            let cards = document.querySelectorAll(".card")
+
+            for (let i = 0; i < products.length; i++) {
+                if (products[i].fandom.name === linkValue) {
+                    filteredProducts.push(products[i])
+                }
+            }
+
+            cards.forEach(card => {
+                card.remove();
+            })
+
+            filteredProducts.forEach(product => {
+                document.querySelector('.pc-row').innerHTML += product.renderProduct();
+            })
+        })
+    })
+}
+
 function fetchProducts() {
     fetch(endPoint)
     .then(response => response.json())
@@ -30,28 +95,6 @@ function fetchProducts() {
         products.data.forEach(product => {
             let newProduct = new Product(product, product.attributes);
             document.querySelector('.pc-row').innerHTML += newProduct.renderProduct();
-        })
-    })
-}
-
-function fetchCategories() {
-    fetch(catsEndPoint)
-    .then(response => response.json())
-    .then(categories => {
-        categories.data.forEach(category => {
-            let newCategory = `<a href="#">${category.attributes.name}</a>`;
-            document.querySelector(".cat-dropdown-content").innerHTML += newCategory;        
-        })
-    })
-}
-
-function fetchFandoms() {
-    fetch(fandomsEndPoint)
-    .then(response => response.json())
-    .then(fandoms => {
-        fandoms.data.forEach(fandom => {
-            let newFandom = `<a href="#">${fandom.attributes.name}</a>`;
-            document.querySelector(".fan-dropdown-content").innerHTML += newFandom;
         })
     })
 }
@@ -92,4 +135,3 @@ function postProduct(name, company, fandom, price, desc, link, img, category){
         document.querySelector('.pc-row').innerHTML += newProduct.renderProduct();
     })
 }
-

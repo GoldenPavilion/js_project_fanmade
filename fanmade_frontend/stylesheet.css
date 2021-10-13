@@ -40,6 +40,10 @@ p {
     text-decoration: none;
 }
 
+#view-all-button {
+    float: left;
+} 
+
 /* DROPDOWN MENU STYLING */
 
 .dropdown {
