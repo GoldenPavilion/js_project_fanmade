@@ -26,7 +26,3 @@ class Product {
 }
 
 Product.all = []
-
-// let newArray = products.filter(function(e) {
-   // return e.category.name === "T-Shirts"; 
-// });

@@ -58,12 +58,17 @@ function filterFandoms(){
             let linkValue = linkHTML.getAttribute('value');
             let products = Product.all;
             let filteredProducts = [];
+            let cards = document.querySelectorAll(".card")
 
             for (let i = 0; i < products.length; i++) {
                 if (products[i].fandom.name === linkValue) {
                     filteredProducts.push(products[i])
                 }
             }
+
+            cards.forEach(card => {
+                card.remove();
+            })
 
             filteredProducts.forEach(product => {
                 document.querySelector('.pc-row').innerHTML += product.renderProduct();
