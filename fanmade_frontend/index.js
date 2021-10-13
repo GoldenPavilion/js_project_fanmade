@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     buildProductForm.addEventListener("submit", (e) => handleForm(e));
 })
 
+menuLinks.addEventListener('click', (e) => console.log(e));
+
 function fetchProducts() {
     fetch(endPoint)
     .then(response => response.json())
