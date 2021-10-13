@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //fetchCategories();
     //fetchFandoms();
     filterCategories();
+    filterFandoms();
 
     const findProductButton = document.querySelector("#add-product-button")
     const findCloseButton = document.querySelector(".close");
@@ -37,6 +38,27 @@ function filterCategories(){
 
             for (let i = 0; i < products.length; i++) {
                 if (products[i].category.name === linkValue) {
+                    filteredProducts.push(products[i])
+                }
+            }
+            console.log(filteredProducts)
+        })
+    })
+}
+
+function filterFandoms(){
+    const fanLinks = document.querySelectorAll(".fanLink");
+    
+    fanLinks.forEach(link => {
+        link.addEventListener('click', function(){
+            let linkID = link.id;
+            let linkHTML = document.querySelector(`#${linkID}`);
+            let linkValue = linkHTML.getAttribute('value');
+            let products = Product.all;
+            let filteredProducts = [];
+
+            for (let i = 0; i < products.length; i++) {
+                if (products[i].fandom.name === linkValue) {
                     filteredProducts.push(products[i])
                 }
             }
