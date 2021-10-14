@@ -2,6 +2,7 @@ const endPoint = "http://localhost:3000/api/products"
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
+    viewAll();
     filterCategories();
     filterFandoms();
 
@@ -9,16 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const findCloseButton = document.querySelector(".close");
     const formModal = document.querySelector(".form-modal");
     const buildProductForm = document.querySelector("#new-product-form");
-    const viewAllButton = document.querySelector("#view-all-button");
-
-    viewAllButton.addEventListener('click', function(){
-        let cards = document.querySelectorAll(".card")
-        cards.forEach(card => {
-            card.remove();
-        })
-        fetchProducts();
-    })
-
+    
     findProductButton.addEventListener('click', function(){
         formModal.style.display = 'flex';
     })
@@ -30,39 +22,42 @@ document.addEventListener('DOMContentLoaded', () => {
     buildProductForm.addEventListener("submit", (e) => handleForm(e));
 })
 
+function viewAll(){
+    const viewAllButton = document.querySelector("#view-all-button");
+    let products = Product.all;
+
+    viewAllButton.addEventListener('click', function(){
+        let cards = document.querySelectorAll(".card")
+        
+        cards.forEach(card => {
+            card.remove();
+        })
+        
+        products.forEach(product => {
+            document.querySelector('.pc-row').innerHTML += product.renderProduct();
+        })
+    })
+}
+
 function filterCategories(){
-    // grabbing all of the HTML with class catLink
     const catLinks = document.querySelectorAll(".catLink");
     
-    // loop through each link in catLinks
     catLinks.forEach(link => {
-        // listen for a user's click on a link
         link.addEventListener('click', function(){
-            // create variable that grabs the id of the link
             let linkID = link.id;
-            // create variable that grabs the link's HTML data based on its id
-            let linkHTML = document.querySelector(`#${linkID}`);
-            // create variable that grabs the value from the link's HTML data 
+            let linkHTML = document.querySelector(`#${linkID}`); 
             let linkValue = linkHTML.getAttribute('value');
-            // create a variable that represents all Product objects in an array
             let products = Product.all;
-            // create an empty array to insert products after they are filtered
             let filteredProducts = [];
             
-            // start a for loop through all of the products
             for (let i = 0; i < products.length; i++) {
-                // if a products' category name is equal to the value of a link
-                // push that product into the filteredProducts array
                 if (products[i].category.name === linkValue) {
                     filteredProducts.push(products[i])
                 }
             }
             
-            // go through each card in the cards Node and remove it
             removeCards();
 
-            // go through the newly constructed filteredProducts array and render each product
-            // into pc-row
             filteredProducts.forEach(product => {
                 document.querySelector('.pc-row').innerHTML += product.renderProduct();
             })
