@@ -14,8 +14,11 @@ Category.create(name: "Jewelry")
 Category.create(name: "Other Clothing")
 Category.create(name: "Art Prints and Posters")
 Category.create(name: "Crafts")
+Category.create(name: "Stickers")
 Category.create(name: "Dice")
 Category.create(name: "Gaming Accessories")
+Category.create(name: "Housewares")
+
 
 # FANDOMS
 
