@@ -1,12 +1,11 @@
 const endPoint = "http://localhost:3000/api/products"
 
-let cardsList = document.querySelector(".pc-row")
-
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
     viewAll();
     filterCategories();
     filterFandoms();
+    deleteProduct();
 
     const findProductButton = document.querySelector("#add-product-button")
     const findCloseButton = document.querySelector(".close");
@@ -146,5 +145,13 @@ function postProduct(name, company, fandom, price, desc, link, img, category){
         const product = productResp.data;
         let newProduct = new Product(product, product.attributes);
         document.querySelector('.pc-row').innerHTML += newProduct.renderProduct();
+    })
+}
+
+function deleteProduct(){
+    let cardsList = document.querySelector(".pc-row")
+
+    cardsList.addEventListener('click', (e) => {
+        console.log('Clicked')
     })
 }
