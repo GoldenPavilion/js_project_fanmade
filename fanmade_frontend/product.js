@@ -20,7 +20,7 @@ class Product {
                 <h4 class="price">$${this.price}</h4>
                 <p>${this.company} - ${this.fandom.name}</p>
                 <p>${this.description}</p>
-                <button id="delete-button" type="delete" name="delete" value="Delete">Delete</button>
+                <button class="delete-button" type="delete" name="delete" value="Delete">Delete</button>
             </div>
         `;
     }

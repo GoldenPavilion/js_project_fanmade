@@ -1,5 +1,7 @@
 const endPoint = "http://localhost:3000/api/products"
 
+let cardsList = document.querySelector(".pc-row")
+
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
     viewAll();
