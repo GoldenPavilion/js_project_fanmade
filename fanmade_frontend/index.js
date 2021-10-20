@@ -152,6 +152,16 @@ function deleteProduct(){
     let cardsList = document.querySelector(".pc-row")
 
     cardsList.addEventListener('click', (e) => {
-        console.log('Clicked')
+        e.preventDefault();
+        
+        let target = e.target;
+        if (target.className === 'delete-button'){
+            const deleteObj = {
+                method: "DELETE",
+                headers: {"Content-Type": "application/json"}
+            }
+            fetch(endPoint+"/"+target.parentElement.dataset.id, deleteObj);
+            target.parentElement.remove();
+        }
     })
 }
