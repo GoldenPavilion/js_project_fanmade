@@ -20,7 +20,8 @@ class Api::ProductsController < ApplicationController
 
     def destroy
         product = Product.find_by(id: params[:id])
-        product.destroy 
+        product.destroy
+        byebug
     end
 
     private
