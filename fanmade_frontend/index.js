@@ -28,11 +28,7 @@ function viewAll(){
     const viewAllButton = document.querySelector("#view-all-button");
 
     viewAllButton.addEventListener('click', function(){
-        let cards = document.querySelectorAll(".card")
-        
-        cards.forEach(card => {
-            card.remove();
-        })
+        removeCards();
         
         allProducts.forEach(product => {
             document.querySelector('.pc-row').innerHTML += product.renderProduct();
