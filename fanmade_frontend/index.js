@@ -1,4 +1,5 @@
 const endPoint = "http://localhost:3000/api/products"
+let allProducts = Product.all
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
@@ -25,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function viewAll(){
     const viewAllButton = document.querySelector("#view-all-button");
-    let products = Product.all;
 
     viewAllButton.addEventListener('click', function(){
         let cards = document.querySelectorAll(".card")
@@ -34,7 +34,7 @@ function viewAll(){
             card.remove();
         })
         
-        products.forEach(product => {
+        allProducts.forEach(product => {
             document.querySelector('.pc-row').innerHTML += product.renderProduct();
         })
     })
@@ -48,12 +48,11 @@ function filterCategories(){
             let linkID = link.id;
             let linkHTML = document.querySelector(`#${linkID}`); 
             let linkValue = linkHTML.getAttribute('value');
-            let products = Product.all;
             let filteredProducts = [];
             
-            for (let i = 0; i < products.length; i++) {
-                if (products[i].category.name === linkValue) {
-                    filteredProducts.push(products[i])
+            for (let i = 0; i < allProducts.length; i++) {
+                if (allProducts[i].category.name === linkValue) {
+                    filteredProducts.push(allProducts[i])
                 }
             }
             
@@ -74,12 +73,11 @@ function filterFandoms(){
             let linkID = link.id;
             let linkHTML = document.querySelector(`#${linkID}`);
             let linkValue = linkHTML.getAttribute('value');
-            let products = Product.all;
             let filteredProducts = [];
 
-            for (let i = 0; i < products.length; i++) {
-                if (products[i].fandom.name === linkValue) {
-                    filteredProducts.push(products[i])
+            for (let i = 0; i < allProducts.length; i++) {
+                if (allProducts[i].fandom.name === linkValue) {
+                    filteredProducts.push(allProducts[i])
                 }
             }
 
