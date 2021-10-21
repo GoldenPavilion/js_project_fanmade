@@ -152,6 +152,7 @@ function postProduct(name, company, fandom, price, desc, link, img, category){
         const product = productResp.data;
         let newProduct = new Product(product, product.attributes);
         document.querySelector('.pc-row').innerHTML += newProduct.renderProduct();
+        resetForm();
     })
 }
 
