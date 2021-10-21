@@ -4,6 +4,7 @@ let allProducts = Product.all
 document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
     viewAll();
+    mostRecent();
     filterCategories();
     filterFandoms();
     deleteProduct();
@@ -31,6 +32,18 @@ function viewAll(){
         removeCards();
         
         allProducts.forEach(product => {
+            document.querySelector('.pc-row').innerHTML += product.renderProduct();
+        })
+    })
+}
+
+function mostRecent(){
+    const mostRecentButton = document.querySelector("#most-recent-button");
+
+    mostRecentButton.addEventListener('click', function(){
+        removeCards();
+
+        allProducts.reverse().forEach(product => {
             document.querySelector('.pc-row').innerHTML += product.renderProduct();
         })
     })
