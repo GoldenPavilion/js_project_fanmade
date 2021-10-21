@@ -55,7 +55,7 @@ function filterCategories(){
             removeCards();
 
             filteredProducts.forEach(product => {
-                document.querySelector('.pc-row').innerHTML += product.renderProduct();
+               document.querySelector('.pc-row').innerHTML += product.renderProduct();
             })
         })
     })
@@ -80,7 +80,7 @@ function filterFandoms(){
             removeCards();
 
             filteredProducts.forEach(product => {
-                document.querySelector('.pc-row').innerHTML += product.renderProduct();
+               document.querySelector('.pc-row').innerHTML += product.renderProduct();
             })
         })
     })
