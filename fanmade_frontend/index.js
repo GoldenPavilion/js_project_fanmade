@@ -155,6 +155,17 @@ function postProduct(name, company, fandom, price, desc, link, img, category){
     })
 }
 
+function resetForm(){
+    document.querySelector("#product-name").value = '';
+    document.querySelector("#product-company").value = '';
+    document.querySelector("#product-fandoms").value = '';
+    document.querySelector("#product-price").value = '';
+    document.querySelector("#product-description").value = '';
+    document.querySelector("#product-link").value = '';
+    document.querySelector("#product-img").value = '';
+    document.querySelector("#categories").value = '';
+}
+
 function deleteProduct(){
     let cardsList = document.querySelector(".pc-row")
 
