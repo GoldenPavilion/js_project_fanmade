@@ -1,4 +1,7 @@
 class Api::ProductsController < ApplicationController
+
+    before_action :find_product, only: [:show, :destroy]
+
     def index
         products = Product.all
         render json: ProductSerializer.new(products)
