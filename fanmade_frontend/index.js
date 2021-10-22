@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
     viewAll();
     mostRecent();
-    filterCategories();
-    filterFandoms();
+    //filterCategories();
+    //filterFandoms();
+    filter(".catLink", "category");
+    filter(".fanLink", "fandom");
     deleteProduct();
 
     const findProductButton = document.querySelector("#add-product-button")
