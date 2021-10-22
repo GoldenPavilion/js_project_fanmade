@@ -181,6 +181,12 @@ function deleteProduct(){
             }
             fetch(endPoint+"/"+target.parentElement.dataset.id, deleteObj);
             target.parentElement.remove();
+
+            allProducts = allProducts.filter(product => {
+                if(product.id !== target.parentElement.dataset.id){
+                    return true 
+                }
+            })
         }
     })
 }
