@@ -99,6 +99,31 @@ function filterFandoms(){
     })
 }
 
+function filter(htmlClass, obj) {
+    const links = document.querySelectorAll(`${htmlClass}`)
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(){
+            let linkID = link.id;
+            let linkHTML = document.querySelector(`#${linkID}`);
+            let linkValue = linkHTML.getAttribute('value');
+            let filteredProducts = [];
+
+            for (let i = 0; i < allProducts.length; i++) {
+                if (allProducts[i][obj].name === linkValue) {
+                    filteredProducts.push(allProducts[i])
+                }
+            }
+
+            removeCards();
+
+            filteredProducts.forEach(product => {
+               document.querySelector('.pc-row').innerHTML += product.renderProduct();
+            })
+        })
+    })
+}
+
 function removeCards() {
     let cards = document.querySelectorAll(".card")
 
