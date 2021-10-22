@@ -17,19 +17,17 @@ class Api::ProductsController < ApplicationController
     end
 
     def show
-        product = Product.find_by(id: params[:id])
-        render json: ProductSerializer.new(product)
+        render json: ProductSerializer.new(@product)
     end
 
     def destroy
-        product = Product.find_by(id: params[:id])
-        product.destroy
+        @product.destroy
     end
 
     private
 
     def find_product
-        product = Product.find_by(id: params[:id])
+        @product = Product.find_by(id: params[:id])
     end
 
     def product_params
