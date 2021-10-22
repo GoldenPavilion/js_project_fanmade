@@ -25,6 +25,10 @@ class Api::ProductsController < ApplicationController
 
     private
 
+    def find_product
+        product = Product.find_by(id: params[:id])
+    end
+
     def product_params
         params.require(:product).permit(:name, :company, :price, :description, :link, :img, :category_id, :fandom_id)
     end
