@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
     viewAll();
     mostRecent();
-    //filterCategories();
-    //filterFandoms();
     filter(".catLink", "category");
     filter(".fanLink", "fandom");
     deleteProduct();
@@ -47,56 +45,6 @@ function mostRecent(){
 
         allProducts.reverse().forEach(product => {
             document.querySelector('.pc-row').innerHTML += product.renderProduct();
-        })
-    })
-}
-
-function filterCategories(){
-    const catLinks = document.querySelectorAll(".catLink");
-    
-    catLinks.forEach(link => {
-        link.addEventListener('click', function(){
-            let linkID = link.id;
-            let linkHTML = document.querySelector(`#${linkID}`); 
-            let linkValue = linkHTML.getAttribute('value');
-            let filteredProducts = [];
-            
-            for (let i = 0; i < allProducts.length; i++) {
-                if (allProducts[i].category.name === linkValue) {
-                    filteredProducts.push(allProducts[i])
-                }
-            }
-            
-            removeCards();
-
-            filteredProducts.forEach(product => {
-               document.querySelector('.pc-row').innerHTML += product.renderProduct();
-            })
-        })
-    })
-}
-
-function filterFandoms(){
-    const fanLinks = document.querySelectorAll(".fanLink");
-    
-    fanLinks.forEach(link => {
-        link.addEventListener('click', function(){
-            let linkID = link.id;
-            let linkHTML = document.querySelector(`#${linkID}`);
-            let linkValue = linkHTML.getAttribute('value');
-            let filteredProducts = [];
-
-            for (let i = 0; i < allProducts.length; i++) {
-                if (allProducts[i].fandom.name === linkValue) {
-                    filteredProducts.push(allProducts[i])
-                }
-            }
-
-            removeCards();
-
-            filteredProducts.forEach(product => {
-               document.querySelector('.pc-row').innerHTML += product.renderProduct();
-            })
         })
     })
 }
