@@ -146,7 +146,6 @@ function deleteProduct(){
     let cardsList = document.querySelector(".pc-row")
 
     cardsList.addEventListener('click', (e) => {
-        e.preventDefault();
         
         let target = e.target;
         if (target.className === 'delete-button'){
