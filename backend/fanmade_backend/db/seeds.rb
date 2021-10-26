@@ -41,26 +41,6 @@ Fandom.create(name: "Books (General)")
 
 # PRODUCTS
 
-Product.create(name: "Terry Funk X SPLX",
-               company: "SPLX Apparel",
-               price: 26.99,
-               description: "An orange and black t-shirt celebrating wrestling legend Terry Funk.",
-               link: "https://suplexapparel.com/collections/t-shirts/products/official-terry-funk-x-splx-t-shirt-red",
-               img: "https://cdn.shopify.com/s/files/1/0372/2294/0810/products/TERRY-FUNK-2_720x.jpg?v=1619881815",
-               category_id: 1,
-               fandom_id: 10
-)
-
-Product.create(name: "FMW Vintage Baseball Hat",
-               company: "SPLX Apparel",
-               price: 23.99,
-               description: "A black hat with the classic FMW logo on the front.",
-               link: "https://suplexapparel.com/collections/summer-21/products/official-fmw-vintage-dad-hat",
-               img: "https://cdn.shopify.com/s/files/1/0372/2294/0810/products/FMW-HAT2_720x.jpg?v=1628714250",
-               category_id: 4,
-               fandom_id: 10
-)
-
 Product.create(name: "Amazing Ninja Dude - Michaelangelo",
                company: "Tee Fury",
                price: 42.00,
