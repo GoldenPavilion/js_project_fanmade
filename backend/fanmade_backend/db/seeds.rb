@@ -230,3 +230,13 @@ Product.create(name: "DND Welcome Sign",
                category_id: 6,
                fandom_id: 9
 )
+
+Product.create(name: "AEW Roster Poster - 11X17",
+               company: "Etsy (Hal Haley Art)",
+               price: 25.00,
+               description: "All 54 members of the original in-ring roster of All Elite Wrestling, from VP Cody Rhodes to Le Champion Chris Jericho",
+               link: "https://www.etsy.com/listing/732780544/aew-roster-11x17-fine-art-print?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=aew&ref=sr_gallery-1-1&organic_search_click=1",
+               img: "https://i.etsystatic.com/17107555/r/il/2ac1d5/2984891090/il_794xN.2984891090_b6wr.jpg",
+               category_id: 5,
+               fandom_id: 10
+)

@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchProducts();
     viewAll();
     mostRecent();
-    filter(".catLink", "category");
-    filter(".fanLink", "fandom");
+    filterProduct(".catLink", "category");
+    filterProduct(".fanLink", "fandom");
     deleteProduct();
 
     const findProductButton = document.querySelector("#add-product-button")
@@ -49,7 +49,7 @@ function mostRecent(){
     })
 }
 
-function filter(htmlClass, obj) {
+function filterProduct(htmlClass, obj) {
     const links = document.querySelectorAll(`${htmlClass}`)
     
     links.forEach(link => {
