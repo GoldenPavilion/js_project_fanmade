@@ -24,3 +24,5 @@ $ rails server
 With the backend running, you can open the application in your browser by navigating to the fanmade_frontend directory and opening index.html. 
 
 $ open index.html
+
+Video Demo: https://www.youtube.com/watch?v=CnQky8X72a8
