@@ -2,7 +2,9 @@ const endPoint = "http://localhost:3000/api/products"
 let allProducts = Product.all
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("a");
     fetchProducts();
+    console.log("b");
     viewAll();
     mostRecent();
     filterProduct(".catLink", "category");
@@ -83,14 +85,19 @@ function removeCards() {
 }
 
 function fetchProducts() {
+    console.log("c");
     fetch(endPoint)
     .then(response => response.json())
     .then(products => {
+        console.log("d");
         products.data.forEach(product => {
             let newProduct = new Product(product, product.attributes);
             document.querySelector('.pc-row').innerHTML += newProduct.renderProduct();
+            // Never Use This - Efficiency and Might Wipe Event Listeners 
+            // document.querySelector('.pc-row').insertAdjacentHTML("beforeend", newProduct.renderProduct());
         })
     })
+    console.log("e");
 }
 
 function handleForm(e) {
@@ -164,3 +171,7 @@ function deleteProduct(){
         }
     })
 }
+
+// arrow function versus function declaration
+// study Promises
+// study basic HTML formatting
